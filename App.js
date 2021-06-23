@@ -5,6 +5,8 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  Image,
+  ScrollView,
 } from 'react-native';
 import {
   IcHomeActive,
@@ -25,103 +27,145 @@ import {
   IcPulsa,
   IcCar,
   IcDoctor,
+  IcLogoGojek,
 } from './icons';
+import {IlBannerNews, IlBannerFootball} from './illustrations';
+import {Button, Gap, Line} from './components';
 
 const App = () => {
   return (
     <View style={styles.wrapper}>
-      <View style={styles.page}>
-        {/* Search Bar  */}
-        <View style={styles.SearchPromoWrapper}>
-          <View style={styles.SearchWrapper}>
-            <TextInput style={styles.input} placeholder="Masukkan Kata Kunci" />
-            <IcSearch style={styles.IcSearch} />
-          </View>
-          <View style={styles.PromoWrapper}>
-            <IcPromo style={styles.IcPromo} />
-          </View>
-        </View>
-        {/* Go Pay */}
-        <View style={styles.sectionGopay}>
-          <View style={styles.headerGopay}>
-            <IcGopay />
-            <Text style={styles.textGopay}>Rp.50.000</Text>
-          </View>
-          <View style={styles.contentGopay}>
-            <TouchableOpacity style={styles.bodyGopay}>
-              <IcPay />
-              <Text style={styles.textGopay}>Pay</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.bodyGopay}>
-              <IcNearby />
-              <Text style={styles.textGopay}>Nearby</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.bodyGopay}>
-              <IcTopUp />
-              <Text style={styles.textGopay}>Top Up</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.bodyGopay}>
-              <IcMore />
-              <Text style={styles.textGopay}>More</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        {/* Main Features */}
-        <View style={styles.featurePage}>
-          <View style={styles.menu}>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
-                <IcBike />
-              </View>
-              <Text style={styles.textFeature}>Go-Ride</Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.page}>
+          {/* Search Bar  */}
+          <View style={styles.SearchPromoWrapper}>
+            <View style={styles.SearchWrapper}>
+              <TextInput
+                style={styles.input}
+                placeholder="Masukkan Kata Kunci"
+              />
+              <IcSearch style={styles.IcSearch} />
             </View>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
-                <IcCar />
-              </View>
-              <Text style={styles.textFeature}>Go-Car</Text>
-            </View>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
-                <IcDoctor />
-              </View>
-              <Text style={styles.textFeature}>Go-Doctor</Text>
-            </View>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
-                <IcSend />
-              </View>
-              <Text style={styles.textFeature}>Go-Send</Text>
+            <View style={styles.PromoWrapper}>
+              <IcPromo style={styles.IcPromo} />
             </View>
           </View>
-          <View style={styles.menu}>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
-                <IcDeal />
-              </View>
-              <Text style={styles.textFeature}>Go-Deal</Text>
+          {/* Go Pay */}
+          <View style={styles.sectionGopay}>
+            <View style={styles.headerGopay}>
+              <IcGopay />
+              <Text style={styles.textGopay}>Rp.50.000</Text>
             </View>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
-                <IcPulsa />
-              </View>
-              <Text style={styles.textFeature}>Go-Pulsa</Text>
-            </View>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
-                <IcFood />
-              </View>
-              <Text style={styles.textFeature}>Go-Food</Text>
-            </View>
-            <View style={styles.featureWrapper}>
-              <View style={styles.iconFeatureWrapper}>
+            <View style={styles.contentGopay}>
+              <TouchableOpacity style={styles.bodyGopay}>
+                <IcPay />
+                <Text style={styles.textGopay}>Pay</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.bodyGopay}>
+                <IcNearby />
+                <Text style={styles.textGopay}>Nearby</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.bodyGopay}>
+                <IcTopUp />
+                <Text style={styles.textGopay}>Top Up</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.bodyGopay}>
                 <IcMore />
+                <Text style={styles.textGopay}>More</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          {/* Main Features */}
+          <View style={styles.featurePage}>
+            <View style={styles.menu}>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcBike />
+                </View>
+                <Text style={styles.textFeature}>Go-Ride</Text>
               </View>
-              <Text style={styles.textFeature}>More</Text>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcCar />
+                </View>
+                <Text style={styles.textFeature}>Go-Car</Text>
+              </View>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcDoctor />
+                </View>
+                <Text style={styles.textFeature}>Go-Doctor</Text>
+              </View>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcSend />
+                </View>
+                <Text style={styles.textFeature}>Go-Send</Text>
+              </View>
+            </View>
+            <View style={styles.menu}>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcDeal />
+                </View>
+                <Text style={styles.textFeature}>Go-Deal</Text>
+              </View>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcPulsa />
+                </View>
+                <Text style={styles.textFeature}>Go-Pulsa</Text>
+              </View>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcFood />
+                </View>
+                <Text style={styles.textFeature}>Go-Food</Text>
+              </View>
+              <View style={styles.featureWrapper}>
+                <View style={styles.iconFeatureWrapper}>
+                  <IcMore />
+                </View>
+                <Text style={styles.textFeature}>More</Text>
+              </View>
+            </View>
+          </View>
+          <View
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{height: 17, backgroundColor: '#F2F2F4', marginTop: 3}}
+          />
+          {/* Section News */}
+          <Gap height={25} />
+          <View>
+            <Image source={IlBannerNews} style={styles.IlNews} />
+            <IcLogoGojek style={styles.IlLogoGojek} />
+            <View>
+              <Text style={styles.titleTextNews}>Go-News</Text>
+              <Text style={styles.contentTextNews}>
+                Tim Jaguar dan Buru Sergap Gerebek Rumah Untuk Ritual Santet Di
+                Depok.
+              </Text>
+              <View style={styles.button}>
+                <Button title="read" />
+              </View>
+            </View>
+          </View>
+          <Line />
+          <View>
+            <Image source={IlBannerFootball} style={styles.IlNews} />
+            <IcLogoGojek style={styles.IlLogoGojek} />
+            <View>
+              <Text style={styles.titleTextNews}>Euro 2021</Text>
+              <Text style={styles.contentTextNews}>
+                Tim Perancis Menang Atas Tim Portugal.
+              </Text>
+              <View style={styles.button}>
+                <Button title="read" />
+              </View>
             </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
       <View style={styles.bottomNavigator}>
         <View style={styles.iconBottom}>
           <TouchableOpacity style={styles.boxIconBottom} activeOpacity={0.6}>
@@ -160,7 +204,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
     paddingHorizontal: 18,
-    paddingTop: 15,
+    paddingVertical: 18,
   },
   bottomNavigator: {
     backgroundColor: 'white',
@@ -268,6 +312,34 @@ const styles = StyleSheet.create({
   },
   iconFeatureWrapper: {
     padding: 3,
+  },
+  IlNews: {
+    width: '100%',
+    borderRadius: 8,
+    position: 'relative',
+  },
+  IlLogoGojek: {
+    position: 'absolute',
+    marginTop: 10,
+    marginLeft: 10,
+  },
+  titleTextNews: {
+    textTransform: 'uppercase',
+    color: '#130f40',
+    fontSize: 16,
+    fontWeight: '600',
+    marginTop: 6,
+    marginBottom: 4,
+  },
+  contentTextNews: {
+    color: '#576574',
+    fontSize: 14,
+    fontWeight: '500',
+    lineHeight: 20,
+  },
+  button: {
+    alignSelf: 'flex-end',
+    marginTop: 6,
   },
 });
 

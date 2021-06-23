@@ -20,6 +20,7 @@ import IcDeal from './Deal.svg';
 import IcPulsa from './Pulsa.svg';
 import IcCar from './Car.svg';
 import IcDoctor from './Doctor.svg';
+import IcLogoGojek from './LogoGojek.svg';
 
 export {
   IcHomeActive,
@@ -44,4 +45,5 @@ export {
   IcPulsa,
   IcCar,
   IcDoctor,
+  IcLogoGojek,
 };
