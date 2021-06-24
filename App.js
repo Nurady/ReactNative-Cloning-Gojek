@@ -17,9 +17,6 @@ import {
   IcSearch,
   IcPromo,
   IcGopay,
-  IcPay,
-  IcNearby,
-  IcTopUp,
   IcMore,
   IcFood,
   IcSend,
@@ -30,7 +27,7 @@ import {
   IcDoctor,
   IcLogoGojek,
   IcLogoGoFood,
-} from './icons';
+} from './src/assets/icons';
 import {
   IlBannerNews,
   IlBannerFootball,
@@ -39,8 +36,8 @@ import {
   IlRes2,
   IlRes3,
   IlRes4,
-} from './illustrations';
-import {Button, Gap, Line} from './components';
+} from './src/assets/illustrations';
+import {Button, Gap, Line, GopayFeature} from './src/components';
 
 const App = () => {
   return (
@@ -60,29 +57,17 @@ const App = () => {
               <IcPromo style={styles.IcPromo} />
             </View>
           </View>
-          {/* Go Pay */}
+          {/* Go Pay Feature*/}
           <View style={styles.sectionGopay}>
             <View style={styles.headerGopay}>
               <IcGopay />
               <Text style={styles.textGopay}>Rp.50.000</Text>
             </View>
             <View style={styles.contentGopay}>
-              <TouchableOpacity style={styles.bodyGopay}>
-                <IcPay />
-                <Text style={styles.textGopay}>Pay</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.bodyGopay}>
-                <IcNearby />
-                <Text style={styles.textGopay}>Nearby</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.bodyGopay}>
-                <IcTopUp />
-                <Text style={styles.textGopay}>Top Up</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.bodyGopay}>
-                <IcMore />
-                <Text style={styles.textGopay}>More</Text>
-              </TouchableOpacity>
+              <GopayFeature title="Pay" type="pay" />
+              <GopayFeature title="Nearby" type="nearby" />
+              <GopayFeature title="Top Up" type="topup" />
+              <GopayFeature title="More" type="more" />
             </View>
           </View>
           {/* Main Features */}
@@ -333,10 +318,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 13,
     fontWeight: '600',
-  },
-  bodyGopay: {
-    flex: 1,
-    alignItems: 'center',
   },
   contentGopay: {
     flexDirection: 'row',
