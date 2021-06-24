@@ -17,14 +17,6 @@ import {
   IcSearch,
   IcPromo,
   IcGopay,
-  IcMore,
-  IcFood,
-  IcSend,
-  IcBike,
-  IcDeal,
-  IcPulsa,
-  IcCar,
-  IcDoctor,
   IcLogoGojek,
   IcLogoGoFood,
 } from './src/assets/icons';
@@ -37,7 +29,7 @@ import {
   IlRes3,
   IlRes4,
 } from './src/assets/illustrations';
-import {Button, Gap, Line, GopayFeature} from './src/components';
+import {Button, Gap, Line, GopayFeature, MainFeature} from './src/components';
 
 const App = () => {
   return (
@@ -57,6 +49,7 @@ const App = () => {
               <IcPromo style={styles.IcPromo} />
             </View>
           </View>
+
           {/* Go Pay Feature*/}
           <View style={styles.sectionGopay}>
             <View style={styles.headerGopay}>
@@ -70,65 +63,25 @@ const App = () => {
               <GopayFeature title="More" type="more" />
             </View>
           </View>
+
           {/* Main Features */}
           <View style={styles.featurePage}>
             <View style={styles.menu}>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcBike />
-                </View>
-                <Text style={styles.textFeature}>Go-Ride</Text>
-              </View>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcCar />
-                </View>
-                <Text style={styles.textFeature}>Go-Car</Text>
-              </View>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcDoctor />
-                </View>
-                <Text style={styles.textFeature}>Go-Doctor</Text>
-              </View>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcSend />
-                </View>
-                <Text style={styles.textFeature}>Go-Send</Text>
-              </View>
-            </View>
-            <View style={styles.menu}>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcDeal />
-                </View>
-                <Text style={styles.textFeature}>Go-Deal</Text>
-              </View>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcPulsa />
-                </View>
-                <Text style={styles.textFeature}>Go-Pulsa</Text>
-              </View>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcFood />
-                </View>
-                <Text style={styles.textFeature}>Go-Food</Text>
-              </View>
-              <View style={styles.featureWrapper}>
-                <View style={styles.iconFeatureWrapper}>
-                  <IcMore />
-                </View>
-                <Text style={styles.textFeature}>More</Text>
-              </View>
+              <MainFeature type="bike" title="Go-Ride" />
+              <MainFeature type="car" title="Go-Car" />
+              <MainFeature type="doctor" title="Go-Doctor" />
+              <MainFeature type="send" title="Go-Send" />
+              <MainFeature type="deal" title="Go-Deal" />
+              <MainFeature type="pulsa" title="Go-Pulsa" />
+              <MainFeature type="food" title="Go-Food" />
+              <MainFeature type="more" title="Go-More" />
             </View>
           </View>
           <View
             // eslint-disable-next-line react-native/no-inline-styles
             style={{height: 17, backgroundColor: '#F2F2F4', marginTop: 3}}
           />
+
           {/* Section News */}
           <Gap height={25} />
           <View>
@@ -335,27 +288,8 @@ const styles = StyleSheet.create({
   menu: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    width: '100%',
     marginBottom: 18,
-  },
-  featureWrapper: {
-    height: 70,
-    width: 70,
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: '#FFC700',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 6,
-  },
-  textFeature: {
-    fontSize: 10,
-    fontWeight: '500',
-    textAlign: 'center',
-    textTransform: 'uppercase',
-  },
-  iconFeatureWrapper: {
-    padding: 3,
+    flexWrap: 'wrap',
   },
   IlNews: {
     width: '100%',
