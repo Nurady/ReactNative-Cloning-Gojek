@@ -7,6 +7,7 @@ import {
   TextInput,
   Image,
   ScrollView,
+  ImageBackground,
 } from 'react-native';
 import {
   IcHomeActive,
@@ -28,8 +29,17 @@ import {
   IcCar,
   IcDoctor,
   IcLogoGojek,
+  IcLogoGoFood,
 } from './icons';
-import {IlBannerNews, IlBannerFootball} from './illustrations';
+import {
+  IlBannerNews,
+  IlBannerFootball,
+  IlBannerGoFood,
+  IlRes1,
+  IlRes2,
+  IlRes3,
+  IlRes4,
+} from './illustrations';
 import {Button, Gap, Line} from './components';
 
 const App = () => {
@@ -160,10 +170,63 @@ const App = () => {
                 Tim Perancis Menang Atas Tim Portugal.
               </Text>
               <View style={styles.button}>
-                <Button title="read" />
+                <Button title="read" style={styles.buttonGoFood} />
               </View>
             </View>
           </View>
+          {/* Go Food Banner Section */}
+          <Line />
+          <View>
+            <ImageBackground
+              source={IlBannerGoFood}
+              style={styles.bannerGoFodd}
+              imageStyle={styles.ImageBackground}>
+              <IcLogoGoFood style={styles.IlLogoGoFod} />
+              <View style={styles.textWrapperGoFood}>
+                <View>
+                  <Text style={styles.titleGoFood}>Free GO-FOOD Voucher</Text>
+                  <Text style={styles.subTitleGoFood}>
+                    Quick, Before the run out
+                  </Text>
+                </View>
+                <Button title="Get Voucher" />
+              </View>
+            </ImageBackground>
+          </View>
+          <Line />
+          {/* Nearby Restaurant Section */}
+          <View>
+            <View>
+              <IcLogoGoFood />
+              <View style={styles.textWrapperNearby}>
+                <Text style={styles.titleNearby}>Nearby Restaurants</Text>
+                <Text style={styles.subTitleNearby}>See All</Text>
+              </View>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}>
+                <View style={styles.WrapperNearbyRestaurant}>
+                  <View style={styles.imageTextWrapperRestaurant}>
+                    <Image source={IlRes1} style={styles.imageRestaurant} />
+                    <Text style={styles.textRestaurant}>RM. Minang Raya</Text>
+                  </View>
+                  <View style={styles.imageTextWrapperRestaurant}>
+                    <Image source={IlRes2} style={styles.imageRestaurant} />
+                    <Text style={styles.textRestaurant}>RM. Kabayan</Text>
+                  </View>
+                  <View style={styles.imageTextWrapperRestaurant}>
+                    <Image source={IlRes3} style={styles.imageRestaurant} />
+                    <Text style={styles.textRestaurant}>RM. Kafe Kita</Text>
+                  </View>
+                  <View style={styles.imageTextWrapperRestaurant}>
+                    <Image source={IlRes4} style={styles.imageRestaurant} />
+                    <Text style={styles.textRestaurant}>Mc Donal Senen</Text>
+                  </View>
+                </View>
+              </ScrollView>
+            </View>
+          </View>
+          <Line />
         </View>
       </ScrollView>
       <View style={styles.bottomNavigator}>
@@ -340,6 +403,75 @@ const styles = StyleSheet.create({
   button: {
     alignSelf: 'flex-end',
     marginTop: 6,
+  },
+  bannerGoFodd: {
+    width: '100%',
+    height: 170,
+    position: 'relative',
+  },
+  IlLogoGoFod: {
+    marginTop: 10,
+    marginLeft: 10,
+  },
+  ImageBackground: {
+    borderRadius: 8,
+  },
+  textWrapperGoFood: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+    position: 'absolute',
+    bottom: 10,
+    width: '100%',
+    alignItems: 'center',
+  },
+  titleGoFood: {
+    textTransform: 'uppercase',
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '700',
+    paddingBottom: 8,
+  },
+  subTitleGoFood: {
+    color: 'white',
+    fontSize: 13,
+    fontWeight: '400',
+  },
+  buttonGoFood: {
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+  },
+  textWrapperNearby: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 8,
+  },
+  titleNearby: {
+    color: '#130f40',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  subTitleNearby: {
+    color: '#27ae60',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  WrapperNearbyRestaurant: {
+    flexDirection: 'row',
+  },
+  imageTextWrapperRestaurant: {
+    marginRight: 14,
+  },
+  imageRestaurant: {
+    width: 160,
+    borderRadius: 8,
+    marginBottom: 6,
+    resizeMode: 'cover',
+  },
+  textRestaurant: {
+    color: '#130f40',
+    fontSize: 14,
+    fontWeight: '700',
   },
 });
 
