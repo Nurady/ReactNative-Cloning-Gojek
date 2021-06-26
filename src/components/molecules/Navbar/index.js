@@ -6,10 +6,10 @@ export default class Navbar extends Component {
   render() {
     return (
       <View style={styles.bottomNavigator}>
-        <NavbarButton type="home active" title="Home" active />
-        <NavbarButton type="order active" title="Order" />
-        <NavbarButton type="inbox active" title="Inbox" />
-        <NavbarButton type="account active" title="Account" />
+        <NavbarButton type="home active" title="Home" active go={'Home'} />
+        <NavbarButton type="order active" title="Order" go={'NewsDetail'} />
+        <NavbarButton type="inbox active" title="Inbox" go={'NewsDetail2'} />
+        <NavbarButton type="account active" title="Account" go={'NewsDetail'} />
       </View>
     );
   }

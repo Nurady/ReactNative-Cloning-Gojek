@@ -6,11 +6,16 @@ import {
   IcInboxActive,
   IcAccountActive,
 } from '../../../assets';
+import {useNavigation} from '@react-navigation/native';
 
-const NavbarButton = ({title, type, active}) => {
+const NavbarButton = ({title, type, active, go}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.iconBottom}>
-      <TouchableOpacity style={styles.boxIconBottom} activeOpacity={0.6}>
+      <TouchableOpacity
+        style={styles.boxIconBottom}
+        activeOpacity={0.6}
+        onPress={() => navigation.navigate(go)}>
         {type === 'home active' && <IcHomeActive />}
         {type === 'order active' && <IcOrderActive />}
         {type === 'inbox active' && <IcInboxActive />}
