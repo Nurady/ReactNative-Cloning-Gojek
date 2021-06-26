@@ -15,7 +15,7 @@ const NavbarButton = ({title, type, active, go}) => {
       <TouchableOpacity
         style={styles.boxIconBottom}
         activeOpacity={0.6}
-        onPress={() => navigation.navigate(go)}>
+        onPress={() => navigation.replace(go)}>
         {type === 'home active' && <IcHomeActive />}
         {type === 'order active' && <IcOrderActive />}
         {type === 'inbox active' && <IcInboxActive />}
