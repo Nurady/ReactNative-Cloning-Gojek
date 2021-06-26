@@ -2,8 +2,10 @@ import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import {IlBannerNews, IcLogoGojek, IlBannerFootball} from '../../../assets';
 import Button from '../Button';
+import {useNavigation} from '@react-navigation/native';
 
-const NewsSection = ({title, desc, type}) => {
+const NewsSection = ({title, desc, type, go}) => {
+  const navigation = useNavigation();
   return (
     <View>
       {type === 'news' && <Image source={IlBannerNews} style={styles.IlNews} />}
@@ -15,7 +17,7 @@ const NewsSection = ({title, desc, type}) => {
         <Text style={styles.titleTextNews}>{title}</Text>
         <Text style={styles.contentTextNews}>{desc}</Text>
         <View style={styles.button}>
-          <Button title="read" />
+          <Button title="read" onPress={() => navigation.navigate(go)} />
         </View>
       </View>
     </View>
