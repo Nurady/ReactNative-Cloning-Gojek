@@ -12,7 +12,7 @@ export default class GopayContent extends Component {
           <Text style={styles.textGopay}>Rp.50.000</Text>
         </View>
         <View style={styles.contentGopay}>
-          <GopayFeature title="Pay" type="pay" />
+          <GopayFeature title="Pay" type="pay" go={'ScanQRCode'} />
           <GopayFeature title="Nearby" type="nearby" />
           <GopayFeature title="Top Up" type="topup" />
           <GopayFeature title="More" type="more" />

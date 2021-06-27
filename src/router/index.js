@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Home, NewsDetail, NewsDetail2, Order} from '../containers';
+import {Home, NewsDetail, NewsDetail2, Order, ScanQRCode} from '../containers';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +25,11 @@ const Router = () => {
       <Stack.Screen
         name="Order"
         component={Order}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ScanQRCode"
+        component={ScanQRCode}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
