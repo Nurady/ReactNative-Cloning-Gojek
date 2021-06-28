@@ -4,6 +4,10 @@ import {Gap} from '../../../components';
 import {RNCamera} from 'react-native-camera';
 
 class ScanQRCode extends Component {
+  state = {
+    barcode: 'More Options',
+  };
+
   takePicture = async () => {
     if (this.camera) {
       const options = {quality: 0.5, base64: true};
@@ -15,7 +19,7 @@ class ScanQRCode extends Component {
   render() {
     return (
       <View style={styles.page}>
-        <View style={styles.content} />
+        {/* <View style={styles.content} /> */}
         <View style={styles.container}>
           <RNCamera
             ref={ref => {
@@ -36,9 +40,15 @@ class ScanQRCode extends Component {
               buttonPositive: 'Ok',
               buttonNegative: 'Cancel',
             }}
-            onGoogleVisionBarcodesDetected={({barcodes}) => {
-              console.log(barcodes);
+            onBarCodeRead={barcode => {
+              console.log(barcode);
+              this.setState({
+                barcode: barcode.data,
+              });
             }}
+            // onGoogleVisionBarcodesDetected={({barcodes}) => {
+            //   console.log(barcodes);
+            // }}
           />
           <View
             style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
@@ -56,7 +66,7 @@ class ScanQRCode extends Component {
             <View style={styles.line} />
           </View>
           <View style={styles.optionContent}>
-            <Text style={styles.text}>More Options</Text>
+            <Text style={styles.text}>{`${this.state.barcode}`}</Text>
             <Text style={styles.text}>Shortcut</Text>
           </View>
         </View>
@@ -71,10 +81,10 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
   },
-  content: {
-    flex: 1,
-    backgroundColor: '#c8d6e5',
-  },
+  // content: {
+  //   flex: 1,
+  //   backgroundColor: '#c8d6e5',
+  // },
   optionWrapper: {
     backgroundColor: 'yellow',
     height: 150,
